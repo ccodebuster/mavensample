@@ -14,7 +14,26 @@ public class LoginPage extends Utility {
     By loginButton = By.xpath("//button[contains(text(),'Log in')]");
     By errorMessage = By.xpath("//div[@class='message-error validation-summary-errors']");
 
-
+    public String getWelcomeText(){
+       return getTextFromElement(welcomeText);
+    }
+    public void enterEmailId(String email){
+        sendTextToElement(emailField,email);
+    }
+    public void enterPassWord(String pass){
+        sendTextToElement(passwordField,pass);
+    }
+    public void clickOnLoginButton(){
+        clickOnElement(loginButton);
+    }
+    public String getErrorMessage(){
+        return getTextFromElement(errorMessage);
+    }
+    public void loginToApplication(String userName, String password){
+        enterEmailId(userName);
+        enterPassWord(password);
+        clickOnLoginButton();
+    }
 
 
 
